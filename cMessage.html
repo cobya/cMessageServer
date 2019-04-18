@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<!--
+    Authors: Coby Allred & Cathy McIntosh
+    Section: CSC 337
+    Description: This is the HTML for a chatting home screen where the user can navigate betweeen
+    conversations and have a main chat log on the right.
+	-->
+	<head>
+		<link rel="stylesheet" type="text/css" href="cMessage.css" />
+		<script type="text/javascript" src="cMessage.js"></script>
+		<title>cMessage</title>
+	</head>
+	<body>
+        <!-- status: contains any error messages when fetching data-->
+        <div id="status"></div>
+        <!-- container: main container for both conversation panel and messaging panel-->
+        <div id="container">
+            <!-- This panel contains all the conversation tabs -->
+            <div id="conversations-panel">
+                <h2 id="conversation-header">Conversations</h1>
+                <div id="conversations">
+                    <!--Each conversation div will be class "conversation" but a unique
+                    ID that will navigate to the correct conversation to display-->
+                    <div class="conversation" id="1234">Mom</div>
+                    <div class="conversation" id="5678">Dad</div>
+                </div>
+            </div>
+            <!-- This panel contains all the messages that the user has between the 
+            other user in a conversation-->
+            <div id="message-panel">
+                <h2 id="message-banner">Mom</h1>
+                <div id="messages">
+                    <!-- Each message will either be class "other", signaling 
+                    that it was sent from the other user, or "user", signaling that
+                    it was sent from the current user.-->
+                    <div class="other">hey</div>
+                    <div class="user">hi</div>
+                    <div class="other">whats up</div>
+                    <div class="other">hey</div>
+                    <div class="user">hi</div>
+                    <div class="other">whats up</div>
+                    <div class="other">hey</div>
+                    <div class="user">hi</div>
+                    <div class="other">whats up</div>
+                    <div class="other">hey</div>
+                    <div class="user">hi</div>
+                    <div class="other">whats up</div>
+                    <div class="other">hey</div>
+                    <div class="user">hi</div>
+                    <div class="other">whats up</div>
+                    <div class="other">hey</div>
+                    <div class="user">hi</div>
+                    <div class="other">whats up</div>
+                    <div id="typing">Mom is typing...</div>
+                </div>
+                <div id="input">
+                    <textarea type="text" maxlength="180"
+                            spellcheck=true id="comment"></textarea>
+                    <button id="send">Send</button>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
