@@ -17,11 +17,11 @@
                 .then(checkStatus)
                 .then(function (response) {
                     let json = JSON.parse(response);
-                    if (res.success) {
+                    if (json.success) {
                         clearError();
                         let messages = document.getElementById("messages");
                         clearChildren(messages);
-                        for (let i = 0; i < res.messageData.length; i++) {
+                        for (let i = 0; i < json.messageData.length; i++) {
                             let newMessage = document.createElement("div");
                             if (messages[i].username === username) {
                                 newMessage.className = "user";
@@ -41,7 +41,7 @@
          */
         function checkStatus(response) {
             if ((response.status >= OK_HTTP_STATUS && response.status < MULTCHOICES_HTTP_STATUS) | response.status === NO_CHANGE) {
-                return response.json;
+                return response.text();
             } else if (response.status === NOT_FOUND_HTTP_STATUS) {
                 return Promise.reject(new Error(response.status + ": Message not found in the database"));
             } else if (response.status === FILE_GONE_HTTP_STATUS) {
