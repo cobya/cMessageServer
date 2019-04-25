@@ -40,6 +40,7 @@ h2, #message-panel {
 }
 
 #message-panel {
+    height: 750px;
     width: 70%;
     margin: auto;
 }
