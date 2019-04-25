@@ -5,6 +5,13 @@ const DBMessages = require("../models/messages");
 // Keep track of all typing users
 let typingUsers = {};
 
+// enable CORS
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 /* GET all messages, not just recent ones */
 router.get('/', function (req, res, next) {
 	DBMessages.find({}, function (err, messages) {
