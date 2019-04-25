@@ -6,7 +6,7 @@
     const NOT_FOUND_HTTP_STATUS = 410;
     const FILE_GONE_HTTP_STATUS = 404;
     const NO_CHANGE = 304;
-    const URL = "http://localhost:3000/messages";
+    const URL = "http://localhost:process.env.PORT/messages";
     const TYPING_RATE = 3000;
 
     let username = "";
